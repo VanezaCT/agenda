@@ -1,0 +1,183 @@
+body{
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    margin: 30px auto;
+    width: 588px;
+    border: 1px solid rgb(197, 188, 188);
+    border-radius: 20px;   
+    flex-direction: column;
+    font-family: Roboto;
+    gap: 10px;
+    padding: 40px;
+    box-shadow: 0px 0px 14px 0px #c5c5c566;;
+    animation: aparecer 1s;
+    padding-bottom: 50px;
+}
+
+.cont {
+    width: 100%;
+}
+
+label.labelTitulo {
+ font-weight: 900;
+ font-size: 20px;
+ display: flex;
+ align-items: center;
+ margin-bottom: 30px;
+ margin-top: 30px;
+ gap: 10px;
+}
+
+label.labelTitulo svg{
+    width: 40px;
+    margin-left: -5px;
+    
+}
+
+.control{
+    display: flex;
+    gap: 10px;
+}
+
+.input, .buttonAgregar, .buttonOrdenar{
+    display: block;
+    height: 50px;
+    box-sizing: border-box;
+  
+}
+
+.input {
+    border:2px solid #cac3c3;
+    border-radius: 4px;
+    width: 460px;
+    padding-left: 10px;
+}
+
+.buttonAgregar{
+   
+    border: 2px solid #6EC3B4;
+    background-color: #8EEDDC;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 55px;
+    justify-content: center;
+    padding: 5px 15px;
+    outline: none;
+    cursor: pointer;
+    }
+
+.buttonOrdenar{
+    border: 2px solid #C5C5C5;
+    background-color: #F6F6F6;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 55px;
+    justify-content: center;
+    padding: 5px 15px;
+    outline: none;
+    cursor: pointer;
+  
+}
+
+ .task.cont i svg{
+        width: 20px;
+        fill: rgb(34, 32, 32);
+        gap: 10px;
+        align-items:center;
+        padding: 7px;
+        outline: none;
+        cursor: pointer;
+}
+
+.taskContainer{
+    width: 100%;
+}
+
+.task.cont {
+    background-color:  white;
+    border:1px solid #C5C5C5;
+    border-radius: 4px;
+    height: 50px;
+    padding: 10px ;
+    margin-top : 15px ;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    animation: aparecer 0.5s;
+}
+
+.task.cont i:first-child{
+    order: 0;
+}
+
+.task.cont i:last-child{
+    order: 2;
+    opacity: 0.5;
+
+}
+
+.task.cont i:last-child:hover{
+    order: 2;
+    opacity: 0.9;
+    
+}
+
+.task.cont p{
+    order: 1;
+    flex: 1;
+}
+
+ul {
+    padding: 0;
+  }
+
+.task.cont.done p{
+    text-decoration: line-through ;
+}
+
+.empty {
+    display: flex;
+    align-items: center;
+    order: 0;
+    font-family: Roboto;
+    width: 100%; 
+    justify-content: flex-end;
+    opacity: 0.5;
+}
+
+.empty #contar{
+    margin-right: 10px;
+}
+
+.noTask{
+    display: none;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    } 
+}
+
+@media  (max-width:690px){
+    body{
+        margin: 0px auto;
+        width: 100%;
+        border: none;
+        border-radius: 0px;   
+        box-shadow: none;
+        padding-bottom: 0px;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+}

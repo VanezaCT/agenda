@@ -2,6 +2,20 @@ const taskContainer = document.getElementById('taskContainer');
 const taskCount = document.getElementById('contar');
 const ul = document.querySelector('ul')
 const containerCount = document.querySelector('.empty')
+const dateNumber  =document.getElementById('dateNumber');
+const dateText= document.getElementById('dateText');
+const dateMonth= document.getElementById('dateMonth');
+const dateYear= document.getElementById('dateYear');
+
+const setDate= ()=>{
+    const date  = new Date();
+    dateText.textContent=date.toLocaleString('es',{weekday: 'long'});
+    dateNumber.textContent=date.toLocaleString('es',{day: 'numeric'});
+    dateMonth.textContent=date.toLocaleString('es',{month: 'short'});
+    dateYear.textContent=date.toLocaleString('es',{year: 'numeric'});
+};
+
+setDate();
 
 const addNewTask = event =>{
   event.preventDefault(); 

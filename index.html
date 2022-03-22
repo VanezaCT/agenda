@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
-    <link rel =" stylesheet " href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link rel=" stylesheet " href="styles.css">
     <script type="text/javascript" src="script.js" defer></script>
 </head>
+
 <body>
     <div class="cont">
         <form class="form" onsubmit="addNewTask(event)">
-            <label class="labelTitulo"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <path d="M29.3333 6.90666L14.12 22.1333L8.46666 16.48L10.3467 14.6L14.12 18.3733L27.4533 5.03999L29.3333 6.90666ZM26.3867 13.6267C26.56 14.3867 26.6667 15.1867 26.6667 16C26.6667 21.8933 21.8933 26.6667 16 26.6667C10.1067 26.6667 5.33332 21.8933 5.33332 16C5.33332 10.1067 10.1067 5.33332 16 5.33332C18.1067 5.33332 20.0533 5.94666 21.7067 6.99999L23.6267 5.07999C21.4667 3.55999 18.84 2.66666 16 2.66666C8.63999 2.66666 2.66666 8.63999 2.66666 16C2.66666 23.36 8.63999 29.3333 16 29.3333C23.36 29.3333 29.3333 23.36 29.3333 16C29.3333 14.4133 29.04 12.8933 28.5333 11.48L26.3867 13.6267Z" fill="#8EEDDC"/>
-                </svg>Agenda</label>
+            <div class="head">
+                <label class="labelTitulo"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                    viewBox="0 0 32 32" fill="none">
+                    <path
+                        d="M29.3333 6.90666L14.12 22.1333L8.46666 16.48L10.3467 14.6L14.12 18.3733L27.4533 5.03999L29.3333 6.90666ZM26.3867 13.6267C26.56 14.3867 26.6667 15.1867 26.6667 16C26.6667 21.8933 21.8933 26.6667 16 26.6667C10.1067 26.6667 5.33332 21.8933 5.33332 16C5.33332 10.1067 10.1067 5.33332 16 5.33332C18.1067 5.33332 20.0533 5.94666 21.7067 6.99999L23.6267 5.07999C21.4667 3.55999 18.84 2.66666 16 2.66666C8.63999 2.66666 2.66666 8.63999 2.66666 16C2.66666 23.36 8.63999 29.3333 16 29.3333C23.36 29.3333 29.3333 23.36 29.3333 16C29.3333 14.4133 29.04 12.8933 28.5333 11.48L26.3867 13.6267Z"
+                        fill="#8EEDDC" />
+                </svg>AGENDA</label>
+                <div clase="date">
+                        <div class="mes">
+                            <div id="dateText"> </div>
+                            <div id="dateNumber"> </div>
+                        </div>
+                        <div class="anio">
+                            <div id="dateMonth"> </div>
+                            <div id="dateYear"> </div>
+                        </div>
+                </div>
+                
+            </div>
             <div class="control">
-            <input class="input" type="text" autocomplete="off" name="taskText" placeholder="Mi tarea">
-            <button class="buttonAgregar" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path d="M26.25 21H22.75V17.5H21V21H17.5V22.75H21V26.25H22.75V22.75H26.25V21Z" fill="black"/>
-                <path d="M14 24.5H7V3.5H14V8.75C14.0013 9.21371 14.1861 9.65805 14.514 9.98595C14.8419 10.3139 15.2863 10.4987 15.75 10.5H21V14H22.75V8.75C22.7531 8.63499 22.7313 8.52068 22.686 8.41494C22.6407 8.30919 22.5729 8.21454 22.4875 8.1375L16.3625 2.0125C16.2855 1.92703 16.1908 1.8593 16.0851 1.81398C15.9793 1.76866 15.865 1.74683 15.75 1.75H7C6.53628 1.75133 6.09194 1.93614 5.76404 2.26404C5.43614 2.59194 5.25134 3.03628 5.25 3.5V24.5C5.25134 24.9637 5.43614 25.4081 5.76404 25.736C6.09194 26.0639 6.53628 26.2487 7 26.25H14V24.5ZM15.75 3.85L20.65 8.75H15.75V3.85Z" fill="black"/>
-                </svg>
-            </button>
-            <button class="buttonOrdenar" type="button" onclick="renderOrderTasks()"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path d="M15.75 19.25L16.9872 18.0128L20.125 21.1505V3.5H21.875V21.1505L25.0128 18.0128L26.25 19.25L21 24.5L15.75 19.25Z" fill="black"/>
-                <path d="M14 15.75H1.75V17.5H14V15.75Z" fill="black"/>
-                <path d="M14 10.5H5.25V12.25H14V10.5Z" fill="black"/>
-                <path d="M14 5.25H8.75V7H14V5.25Z" fill="black"/>
-                </svg>
-            </button>
+                <input class="input" type="text" autocomplete="off" name="taskText" placeholder="Mi tarea">
+                <button class="buttonAgregar" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="28"
+                        height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M26.25 21H22.75V17.5H21V21H17.5V22.75H21V26.25H22.75V22.75H26.25V21Z" fill="black" />
+                        <path
+                            d="M14 24.5H7V3.5H14V8.75C14.0013 9.21371 14.1861 9.65805 14.514 9.98595C14.8419 10.3139 15.2863 10.4987 15.75 10.5H21V14H22.75V8.75C22.7531 8.63499 22.7313 8.52068 22.686 8.41494C22.6407 8.30919 22.5729 8.21454 22.4875 8.1375L16.3625 2.0125C16.2855 1.92703 16.1908 1.8593 16.0851 1.81398C15.9793 1.76866 15.865 1.74683 15.75 1.75H7C6.53628 1.75133 6.09194 1.93614 5.76404 2.26404C5.43614 2.59194 5.25134 3.03628 5.25 3.5V24.5C5.25134 24.9637 5.43614 25.4081 5.76404 25.736C6.09194 26.0639 6.53628 26.2487 7 26.25H14V24.5ZM15.75 3.85L20.65 8.75H15.75V3.85Z"
+                            fill="black" />
+                    </svg>
+                </button>
+
             </div>
         </form>
-        
-        <div id="taskContainer">
+
+        <div id="taskContainer" class="taskContainer">
         </div>
-        <div class="empty noTask" >
+        <div class="empty noTask">
             <div id="contar"></div>
             <p>tareas completadas </p>
-        
+
         </div>
-            
+
     </div>
 </body>
+
 </html>

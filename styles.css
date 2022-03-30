@@ -224,6 +224,10 @@ ul {
     display: none;
 }
 
+.task.drag{
+    background-color: aqua;
+}
+
 @keyframes aparecer{
     from{
         opacity: 0;

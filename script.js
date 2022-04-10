@@ -61,7 +61,7 @@ firebase.auth().onAuthStateChanged((user) => {
       console.log(user)
       app.classList.add('show')
       login.classList.remove('show')
-      
+      getOrderTask()
       // ...
     } else {
         app.classList.remove('show')
@@ -90,7 +90,6 @@ const dateMonth = document.getElementById('dateMonth');
 const dateYear = document.getElementById('dateYear');
 let taskDrag = null;
 let tasksIds = [];
-
 
 
 const setDate = () => {
@@ -264,7 +263,6 @@ const getTasks = () => {
                 completed: task.val().completed
             })
         })
-        
         tasksIds.forEach(id => {
             const taskFound = tasks.find(t => t.id == id)
             console.log(taskFound)
@@ -286,12 +284,12 @@ const getOrderTask = async () => {
     const db = firebase.database().ref()
     const dborder = db.child(`${uid}/order`)
     await dborder.once('value', (data) => {
-        tasksIds = data.val() ?? []
+        tasksIds = data.val() ?? []        
     })
     getTasks()
 }
 
-getOrderTask()
+
 
 const deleteTask= async(id)=>{
     const db = firebase.database().ref()
@@ -301,5 +299,3 @@ const deleteTask= async(id)=>{
     collectNewOrderIds()
     updateOrderTasks()
 }
-
-

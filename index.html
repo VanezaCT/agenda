@@ -10,31 +10,79 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <link rel=" stylesheet " href="styles.css">
-    
-    
+
+
 </head>
 
 <body>
-    <div class="cont">
-        <form class="form" onsubmit="addNewTask(event)">
-            <div class="head">
-                <label class="labelTitulo"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+    <div class="login" id="login">
+        <div class="login-wrapper">
+        <label class="labelTitulo"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                fill="none">
+                <path
+                    d="M29.3333 6.90666L14.12 22.1333L8.46666 16.48L10.3467 14.6L14.12 18.3733L27.4533 5.03999L29.3333 6.90666ZM26.3867 13.6267C26.56 14.3867 26.6667 15.1867 26.6667 16C26.6667 21.8933 21.8933 26.6667 16 26.6667C10.1067 26.6667 5.33332 21.8933 5.33332 16C5.33332 10.1067 10.1067 5.33332 16 5.33332C18.1067 5.33332 20.0533 5.94666 21.7067 6.99999L23.6267 5.07999C21.4667 3.55999 18.84 2.66666 16 2.66666C8.63999 2.66666 2.66666 8.63999 2.66666 16C2.66666 23.36 8.63999 29.3333 16 29.3333C23.36 29.3333 29.3333 23.36 29.3333 16C29.3333 14.4133 29.04 12.8933 28.5333 11.48L26.3867 13.6267Z"
+                    fill="#8EEDDC" />
+            </svg>AGENDA</label>
+        <p>Controla tus tareas del dia de manera sencilla, desde un solo lugar. </p>
+
+        <button class="btnlogin" type=" button" onclick="auth()"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                viewBox="0 0 28 28" fill="none">
+                <path
+                    d="M25.4398 11.7151H24.5V11.6667H14V16.3333H20.5935C19.6315 19.0499 17.0468 21 14 21C10.1343 21 7.00004 17.8658 7.00004 14C7.00004 10.1343 10.1343 7 14 7C15.7845 7 17.4079 7.67317 18.644 8.77275L21.9439 5.47284C19.8602 3.53092 17.073 2.33334 14 2.33334C7.55712 2.33334 2.33337 7.55709 2.33337 14C2.33337 20.4429 7.55712 25.6667 14 25.6667C20.443 25.6667 25.6667 20.4429 25.6667 14C25.6667 13.2178 25.5862 12.4542 25.4398 11.7151Z"
+                    fill="#FFC107" />
+                <path
+                    d="M3.67847 8.56975L7.51155 11.3808C8.54872 8.813 11.0605 7 14 7C15.7844 7 17.4078 7.67317 18.6439 8.77275L21.9438 5.47284C19.8601 3.53092 17.073 2.33334 14 2.33334C9.5188 2.33334 5.63263 4.86325 3.67847 8.56975Z"
+                    fill="#FF3D00" />
+                <path
+                    d="M14 25.6667C17.0135 25.6667 19.7517 24.5134 21.8219 22.638L18.2111 19.5825C17.0004 20.5032 15.521 21.0012 14 21C10.9655 21 8.38894 19.0651 7.41827 16.3648L3.61377 19.2961C5.5446 23.0743 9.46577 25.6667 14 25.6667Z"
+                    fill="#4CAF50" />
+                <path
+                    d="M25.4398 11.7151H24.5V11.6667H14V16.3333H20.5934C20.1333 17.6262 19.3045 18.756 18.2093 19.5831L18.2111 19.5819L21.8219 22.6374C21.5664 22.8696 25.6667 19.8333 25.6667 14C25.6667 13.2177 25.5862 12.4542 25.4398 11.7151Z"
+                    fill="#1976D2" />
+            </svg>Ingresar con Gmail</button>
+        </div>
+    </div>
+
+    <div class="cont" id="app">
+        <div class="user" id="user">
+            <label class="labelTitulo"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                     viewBox="0 0 32 32" fill="none">
                     <path
                         d="M29.3333 6.90666L14.12 22.1333L8.46666 16.48L10.3467 14.6L14.12 18.3733L27.4533 5.03999L29.3333 6.90666ZM26.3867 13.6267C26.56 14.3867 26.6667 15.1867 26.6667 16C26.6667 21.8933 21.8933 26.6667 16 26.6667C10.1067 26.6667 5.33332 21.8933 5.33332 16C5.33332 10.1067 10.1067 5.33332 16 5.33332C18.1067 5.33332 20.0533 5.94666 21.7067 6.99999L23.6267 5.07999C21.4667 3.55999 18.84 2.66666 16 2.66666C8.63999 2.66666 2.66666 8.63999 2.66666 16C2.66666 23.36 8.63999 29.3333 16 29.3333C23.36 29.3333 29.3333 23.36 29.3333 16C29.3333 14.4133 29.04 12.8933 28.5333 11.48L26.3867 13.6267Z"
                         fill="#8EEDDC" />
                 </svg>AGENDA</label>
-                <div clase="date">
-                        <div class="mes">
-                            <div id="dateText"> </div>
-                            <div id="dateNumber"> </div>
-                        </div>
-                        <div class="anio">
-                            <div id="dateMonth"> </div>
-                            <div id="dateYear"> </div>
-                        </div>
+            <div class="userimg">
+            <img id="img" referrerpolicy="no-referrer">
+            <div class="option">
+                <div class="id_email">
+                    <p id="name"></p>
+                    <p id="email"></p>
                 </div>
-                
+                    <p id="tema"> Tema claro<svg xmlns="http://www.w3.org/2000/svg" width="40" height="22" viewBox="0 0 40 22" fill="none">
+                        <rect x="0.5" y="0.5" width="39" height="21" rx="10.5" fill="#F5F5F5" stroke="#EAEAEA"/>
+                        <circle cx="28" cy="11" r="7" fill="black"/>
+                        </svg></p>
+                    <button type=" button" id="btlogout" onclick="logout()">Salir</button>
+            </div>
+        </div>
+            
+        </div>
+        <form class="form" onsubmit="addNewTask(event)">
+            <div class="head">
+                <button class="before"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7.49999 12L15 19.5L16.05 18.45L9.59999 12L16.05 5.55L15 4.5L7.49999 12Z" fill="black" fill-opacity="0.3"/>
+                    </svg></button>
+                <div clase="date">
+                    <div class="mes">
+                        <div id="dateText"> </div>
+                        <div id="dateNumber"> </div>
+                        <div id="dateMonth"> </div>
+                        <div id="dateYear"> </div>
+                    </div>
+                </div>
+                <button class="next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M16.5 12L9.00001 19.5L7.95001 18.45L14.4 12L7.95001 5.55L9.00001 4.5L16.5 12Z" fill="black" fill-opacity="0.3"/>
+                    </svg></button>
             </div>
             <div class="control">
                 <input class="input" type="text" autocomplete="off" name="taskText" placeholder="Mi tarea">
@@ -61,8 +109,8 @@
     </div>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
-<script  src="script.js" ></script>
-      
+    <script src="script.js"></script>
+
 </body>
 
 </html>

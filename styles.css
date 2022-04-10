@@ -3,7 +3,8 @@ body{
     align-items: center;
     background: #ffffff;
     margin: 30px auto;
-    width: 588px;
+    width: 642px;
+    height: 673px;
     border: 1px solid rgb(197, 188, 188);
     border-radius: 20px;   
     flex-direction: column;
@@ -19,11 +20,26 @@ body{
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    width: 100%;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cac3c3;
+}
+
+.before{
+    border: white;
+    background-color: #ffffff;
+}
+
+.next{
+    border: white;
+    background-color: #ffffff;
 }
 
 .date {
 display: flex;
-justify-content: flex-end;
+text-align: center;
 align-items: center;
 font-family: Roboto;
 
@@ -32,37 +48,35 @@ font-family: Roboto;
 .dateRight {
     display :contents;
     align-items : center;
-    justify-content:flex-end;
+    justify-content:center;
 }
 
 #dateNumber{
     font-size:  50px ;
-    color: #69cfbd;
-    margin-left: 10px;
-    justify-content: flex-end;   
+    color: #000000;
+    margin-left: 5px;
+    margin-right: 5px;
+    justify-content: center;   
 }
 
 #dateMonth{
-    display: flex;
     text-transform: uppercase;
     width: 100%;
-    justify-content: flex-end;
+    
  padding-right: 5px; 
 }
 
 #dateText {
-    display: flex;
     text-transform: uppercase;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 #dateNumber,
 #dateText {
-    font-weight : bold;
-    font-size: 24px;
+    font-size: 16px;
     align-items: center;
-    text-align: right;
+    text-align: center;
 }
 
 #dateMonth,
@@ -71,23 +85,14 @@ font-family: Roboto;
     position: relative;
     font-size:  16px ;
     font-family:  Roboto;
-    opacity: 0.8;
-    text-align: right;
+    text-align: center;
 }
 
 .mes{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+ 
     }
-
-.anio{
-display: flex;
-clear: both;
-flex-direction: row;
-justify-content: flex-end;
-
-}
 
 .cont {
     width: 100%;
@@ -98,13 +103,12 @@ label.labelTitulo {
  font-size: 24px;
  display: flex;
  align-items: center;
- margin-bottom: 30px;
  gap: 10px;
 }
 
 label.labelTitulo svg{
     width: 40px;
-    margin-left: -5px;
+    margin-left: -8px;
     
 }
 
@@ -112,6 +116,7 @@ label.labelTitulo svg{
     display: flex;
     justify-self: stretch;
     gap: 10px;
+    margin-top: 20px;
 }
 
 .input, .buttonAgregar{
@@ -123,13 +128,12 @@ label.labelTitulo svg{
 .input {
     border:2px solid #cac3c3;
     border-radius: 4px;
-    flex:1;
+    flex:1px;
     padding-left: 10px;
     font-size: 16px;
 }
 
 .buttonAgregar{
-   
     border: 2px solid #6EC3B4;
     background-color: #8EEDDC;
     border-radius: 5px;
@@ -225,7 +229,7 @@ ul {
 }
 
 .task.drag{
-    background-color: aqua;
+    background-color:#8EEDDC;
 }
 
 @keyframes aparecer{
@@ -251,3 +255,132 @@ ul {
         width: 100%;
     }
 }
+
+#app{
+    display: none;
+}
+
+#app.show{
+    display: block;
+}
+
+#login{
+    display: none;
+    border-radius: 4px;
+    margin-top : 15px ;
+    width: 100%;
+    animation: aparecer 0.5s;
+    align-content:center ;
+    flex-direction: column;
+}
+#login.show{
+    display: flex;
+    padding: 250px;
+    width: 100%;
+}
+
+.login-wrapper{
+    width: 350px;
+    align-self: center;
+}
+
+#app{
+    display: none;
+    align-items: center;
+}
+
+#app.show{
+    display: block;
+}
+
+.user {
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+    align-items: center;
+    border-bottom:1px solid #C5C5C5;
+    padding-bottom: 10px;
+}
+
+#img{
+    border-radius: 100px;
+    width: 50px;
+    height:50px;
+    
+}
+
+.option{
+    display: flex;
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid rgb(197, 188, 188);
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 210px;
+    height: 168px;
+    right: 0px;
+    top: 60px;
+    box-shadow: 0px 0px 14px 0px #c5c5c566;
+    display: none;
+    z-index: 10;
+}
+
+
+.userimg{
+    position: relative;
+}
+
+#name{
+    font-size: 16px;
+    margin-bottom: 1px;
+}
+
+#email{
+    color: #817b7b;
+    font-size: 14pxs;
+    margin-top: 0px;
+}
+
+.userimg:hover .option{
+ display: block;
+}
+
+#tema{
+    display: flex;
+    width: 90%;
+    justify-content:space-between;
+    padding-right: 20px;
+}
+
+#btlogout{
+    border: white;
+    background-color:white;
+    font-size: 16px;
+    padding: 0;
+}
+
+.id_email{
+    border-bottom: 1px solid #C5C5C5; 
+ }
+
+.btnlogin{
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border:1px solid #aca8a8;
+    border-radius: 10px;
+    padding: 7px;
+    padding-right: 10px;
+    width: 250px;
+    justify-content: center;
+}
+
+.login-wrapper p{
+    line-height: 1.7;
+}
+
+.btnlogin svg{
+    padding-right: 15px;
+}
+

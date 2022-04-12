@@ -83,6 +83,7 @@ firebase.auth().onAuthStateChanged((user) => {
   const logout=()=>{
     firebase.auth().signOut().then(() => {
         userCont.classList.remove('show')
+        taskContainer.innerHTML= ""
         // Sign-out successful.
       }).catch((error) => {
         // An error happened.

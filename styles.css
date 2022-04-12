@@ -5,7 +5,7 @@ body{
     margin: 30px auto;
     width: 642px;
     height: 673px;
-    border: 1px solid rgb(197, 188, 188);
+    border: 1px solid rgb(212, 206, 206);
     border-radius: 20px;   
     flex-direction: column;
     font-family: Roboto;
@@ -296,17 +296,23 @@ ul {
 .user {
     display: flex;
     width: 100%;
-    justify-content:space-between;
+    
     align-items: center;
     border-bottom:1px solid #C5C5C5;
     padding-bottom: 10px;
 }
 
+.titulo{
+    display: flex;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
 #img{
     border-radius: 100px;
     width: 50px;
     height:50px;
-    
 }
 
 .option{
@@ -320,7 +326,7 @@ ul {
     width: 210px;
     height: 168px;
     right: 0px;
-    top: 60px;
+    top: 55px;
     box-shadow: 0px 0px 14px 0px #c5c5c566;
     display: none;
     z-index: 10;
@@ -329,6 +335,8 @@ ul {
 
 .userimg{
     position: relative;
+    justify-content: flex-end;
+    margin-left: 72%;
 }
 
 #name{
@@ -350,7 +358,7 @@ ul {
     display: flex;
     width: 90%;
     justify-content:space-between;
-    padding-right: 20px;
+    margin-top: 0;
 }
 
 #btlogout{
@@ -363,6 +371,175 @@ ul {
 .id_email{
     border-bottom: 1px solid #C5C5C5; 
  }
+
+ .switchCont{
+     display: flex;
+     padding-top: 20px;
+ }
+
+.switch .circle{
+    width: 15px;
+    height: 15px;
+    background-color: #636363;
+    border-radius: 50%;
+    position: absolute;
+    right: 32px;
+    margin-top: 1px;
+    transition: all .5s;
+}
+
+.switch .bg{
+    width: 35px;
+    height: 18px;
+    background-color: #afa7a7;
+    border-radius: 20px;
+}
+
+.switch.active .circle{
+    left: 208px;
+    background-color: #000000;
+    transition: all .5s;
+}
+
+#mod.dark_mode{
+    background-color: #000000;
+    border-color: #9795954f;
+    box-shadow: 0px 0px 0px 0px;
+}
+
+#mod.dark_mode .titulo{
+   color: white;
+}
+
+#mod.dark_mode #dateText{
+    color: white;
+ }
+ #mod.dark_mode #dateNumber{
+    color: white;
+ }
+ #mod.dark_mode #dateMonth{
+    color: white;
+ }
+ #mod.dark_mode #dateYear{
+    color: white;
+ }
+
+ #mod.dark_mode .user{
+    background-color: #000000;
+    border-color: #9795954f;;
+ }
+
+ #mod.dark_mode .before {
+    background-color: transparent;
+ }
+
+ #mod.dark_mode .before svg path{
+    fill: white;
+ }
+
+ #mod.dark_mode .next {
+    background-color: transparent;
+ }
+
+ #mod.dark_mode .next svg path{
+    fill: white;
+ }
+
+ #mod.dark_mode .head{
+    background-color: #000000;
+    border-color: #9795954f;;
+ }
+
+ #mod.dark_mode .input{
+    background-color: #000000;
+    border-color: #9795954f;
+    color: white;
+ }
+
+ #mod.dark_mode .task.cont{
+    background-color: #000000;
+    border-color: #9795954f;
+ }
+
+ #mod.dark_mode .task.cont p{
+    color: white;
+ }
+
+ #mod.dark_mode .empty #contar{
+    color: white;
+ }
+
+ #mod.dark_mode .empty p{
+    color: white;
+ }
+
+ #mod.dark_mode .task.cont i svg {
+    fill: rgb(255, 255, 255);
+    outline: none;
+    cursor: pointer;
+}
+
+#mod.dark_mode .task.cont i svg path {
+    fill: rgb(255, 255, 255);
+    outline: none;
+    cursor: pointer;
+}
+
+#mod.dark_mode .task.cont i {
+    fill: rgb(255, 255, 255);
+}
+
+#mod.dark_mode .before svg {
+    fill: rgb(255, 255, 255);
+}
+
+#mod.dark_mode .task.cont  svg{
+    fill: white;
+}
+
+#mod.dark_mode .task.cont {
+    fill: white;
+}
+
+#mod.dark_mode .option{
+    background-color: black;
+    border-color:  #9795954f;
+    box-shadow: 0px 0px 0px 0px;
+}
+
+#mod.dark_mode .id_email{
+    border-bottom: 1px solid  #9795954f;
+
+}
+
+#mod.dark_mode #name{
+    color: white;
+}
+
+#mod.dark_mode #tema{
+ color: white;
+}
+
+#mod.dark_mode #btlogout{
+    border: black;
+    background-color:black;
+    color: white;
+}
+
+#mod.dark_mode .login-wrapper p{
+    color: white;
+}
+
+#mod.dark_mode .labelTitulo{
+    color: white;
+}
+
+
+#mod.dark_mode .btnlogin{
+    background-color: black;
+    border-color:  #9795954f;
+    color: white;
+}
 
 .btnlogin{
     display: flex;

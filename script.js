@@ -8,6 +8,18 @@ const firebaseConfig = {
     measurementId: "G-ZHPFJ1BJGD",
     databaseURL: 'https://agenda-4aeb1-default-rtdb.firebaseio.com/'
 }
+const taskContainer = document.getElementById('taskContainer');
+const taskCount = document.getElementById('contar');
+const ul = document.querySelector('ul')
+const containerCount = document.querySelector('.empty')
+const dateNumber = document.getElementById('dateNumber');
+const dateText = document.getElementById('dateText');
+const dateMonth = document.getElementById('dateMonth');
+const dateYear = document.getElementById('dateYear');
+let taskDrag = null;
+let tasksIds = [];
+const btnswitch=document.getElementById('switch')
+const mod=document.getElementById('mod')
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -53,12 +65,10 @@ firebase.auth().onAuthStateChanged((user) => {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       uid = user.uid;
-      console.log(uid)
       img.src =user.photoURL
       name.textContent=user.displayName
       email.textContent=user.email
-      
-      console.log(user)
+    
       app.classList.add('show')
       login.classList.remove('show')
       getOrderTask()
@@ -79,18 +89,6 @@ firebase.auth().onAuthStateChanged((user) => {
       });
       
   }
-
-const taskContainer = document.getElementById('taskContainer');
-const taskCount = document.getElementById('contar');
-const ul = document.querySelector('ul')
-const containerCount = document.querySelector('.empty')
-const dateNumber = document.getElementById('dateNumber');
-const dateText = document.getElementById('dateText');
-const dateMonth = document.getElementById('dateMonth');
-const dateYear = document.getElementById('dateYear');
-let taskDrag = null;
-let tasksIds = [];
-
 
 const setDate = () => {
     const date = new Date();
@@ -265,7 +263,6 @@ const getTasks = () => {
         })
         tasksIds.forEach(id => {
             const taskFound = tasks.find(t => t.id == id)
-            console.log(taskFound)
             if(taskFound){
             renderTask(taskFound.name,taskFound.id, taskFound.completed)
             }
@@ -298,4 +295,17 @@ const deleteTask= async(id)=>{
     await dbtask.remove()
     collectNewOrderIds()
     updateOrderTasks()
+    contar()
 }
+
+btnswitch.addEventListener("click",() =>{
+   if(btnswitch.classList.contains("active")){
+    btnswitch.classList.remove("active")
+    mod.classList.remove('dark_mode')
+   }
+   else{
+    btnswitch.classList.add("active")
+    mod.classList.add('dark_mode')
+
+   }
+})
